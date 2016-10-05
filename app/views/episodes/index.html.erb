@@ -1,0 +1,9 @@
+<h1>Episodes</h1>
+<hr />
+
+<% @episodes.each do |episode| %>
+<section>
+    <h2><%=episode.title%></h2>
+    <p><%=episode.plot%></p>
+</section>
+<% end %>

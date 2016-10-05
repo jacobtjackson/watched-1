@@ -1,0 +1,17 @@
+<h1>User Profile</h1>
+<hr />
+
+<table>
+    <tr>
+        <th>Name:</th>
+        <td><%=current_user.username%></td>
+    </tr>
+    <tr>
+        <th>Email:</th>
+        <td><%=current_user.email%></td>
+    </tr>
+    <tr>
+        <th>Logins:</th>
+        <td><%=current_user.sign_in_count%></td>
+    </tr>
+</table>
