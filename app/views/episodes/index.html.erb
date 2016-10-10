@@ -3,7 +3,7 @@
 
 <% @episodes.each do |episode| %>
 <section>
-    <h2><%=episode.title%></h2>
+    <h2><%=episode.title%></h2> <h3>(Season <%= episode.season.number %>)</h3>
     <p><%=episode.plot%></p>
 </section>
 <% end %>
