@@ -6,4 +6,11 @@
     <h2><%=episode.title%></h2> <h3>(Season <%= episode.season.number %>)</h3>
     <p><%=episode.plot%></p>
 </section>
+  <% if current_user %>
+    <% if current_user.watches.include?(episode) %>
+      <%= link_to "Unwatched", unwatched_episode_path(episode), method: :put %>
+    <% else %>
+      <%= link_to "Watched", watched_episode_path(episode), method: :put %>
+    <% end %>
+  <% end %>
 <% end %>

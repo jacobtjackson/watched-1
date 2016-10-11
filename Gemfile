@@ -37,6 +37,8 @@ gem 'devise'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'shoulda'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -50,6 +52,7 @@ group :development do
   # Generate a DB Seed file from existing data
   # https://github.com/rroblak/seed_dump
   gem 'seed_dump'
+  gem 'rspec-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
