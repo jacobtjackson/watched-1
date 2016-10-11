@@ -15,3 +15,29 @@
         <td><%=current_user.sign_in_count%></td>
     </tr>
 </table>
+
+<table>
+  <tr>
+    <th>Season</th>
+    <th>Episode #</th>
+    <th>Episode Title</th>
+  </tr>
+<% @seasons.each do |season| %>
+  <% if current_user.watches.where(season: season) == (season.episodes.all) %>
+  <tr>
+    <td>
+      <%= season.number %>
+    </td>
+    <td>
+    </td>
+  </tr>
+  <% elsif current_user.watches.where(season: season) != (season.episodes.all) %>
+    <% current_user.watches.where(season: season).each do |episode| %>
+      <tr>
+        <td><%= episode.season.number %></td>
+        <td><%= episode.number %></td>
+        <td><%= episode.title %></td>
+      </tr>
+    <% end %>
+  <% end %>
+<% end %>
