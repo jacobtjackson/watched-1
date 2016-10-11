@@ -10,9 +10,14 @@
 
   <body>
     <nav>
-        <%= link_to 'Episodes', root_path %>
+        <%= link_to 'Home', root_path %>
+        <%= link_to 'Episodes', episodes_path %>
         <%= link_to 'User Profile', users_profile_path %>
+        <% if current_user %>
         <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <% else %>
+        <%= link_to 'Sign In', new_user_session_path %>
+        <% end %>
     </nav>
 
     <main>

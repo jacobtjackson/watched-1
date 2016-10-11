@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'episodes#index'
+  root 'home#index'
   devise_for :users
   get 'users/profile', to: 'users#show'
   resources :episodes, only: [:index] do
