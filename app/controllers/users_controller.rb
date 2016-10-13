@@ -3,6 +3,5 @@ class UsersController < ApplicationController
 
   def show
     @seasons = Season.all
-    @season = Season.find_by(params[:id])
   end
 end
